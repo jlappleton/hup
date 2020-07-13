@@ -40,6 +40,7 @@ session_start();
                                                        type="text" name="location">
                 <option value="slack">Slack</option>
                 <option value="email">Email</option>
+                <option value="hangouts">Hangouts</option>
             </select>
             <label for="course-field">What course and assignment?</label><input id="course-field" class="form-control" placeholder="Course"
                                                      type="text" name="course">
