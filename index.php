@@ -22,6 +22,7 @@ session_start();
 <script>hideAlert();</script>
 
 <div id="header-container">
+    <button type="button" class="login" onclick="location.href = 'admin/login.php'">LTA Login</button>
     <?php
     //todo get_header();
     ?>
