@@ -71,5 +71,12 @@ session_start();
     ?>
 </div>
 </body>
+<footer>
+    <div id="slack"> Meet us on <a href="https://sbcccs.slack.com">Slack</a>, or click here to <a href="https://join.slack.com/t/sbcccs/shared_invite/zt-dm3lgrg5-ydcp52lpyR4oCorRZEHx6Q">Join</a> </div>
+    <div id="hangouts">Or <a href="https://hangouts.google.com/group/FFSw1A2XNVt3rUyH9">Hangouts</a> </div>
+    <div id="appointments">Or make an appointment with <a href="https://calendar.google.com/calendar/selfsched?sstoken=UVBxM3hnekhMaE53fGRlZmF1bHR8OTU2Mjc4ZmZiZjMwZTI4OWFiNGJjMzUxYzVjNmMwYmI">James</a> or <a href="https://www.google.com/url?q=https://calendar.google.com/calendar/selfsched?sstoken%3DUUN1TUROTFVMNTByfGRlZmF1bHR8ZGNlMDUwZmUzNDc2NmQ2OTEzOTllYzJkZGM0MzI0OTY&sa=D&source=hangouts&ust=1584405482147000&usg=AFQjCNEInE8Sj8fkwNnlsyNNTJ_Be8Zajw">Joseph</a> </div>
+    <div id="csdept"><a href="https://cs.sbcc.edu">CS Dept Website</a></div>
+    <div id="tutoring"><a href="https://docs.google.com/document/d/1EdbQUj3rnSRoHvtuoXPKk-1zuZKmfemJcqqoch0eIFc/edit">Tutoring Resources</a> </div>
+</footer>
 <script>initPage();</script>
 </html>
