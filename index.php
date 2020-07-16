@@ -35,7 +35,7 @@ session_start();
     <div class="enqueue-container" id="enqueue-container">
         <!--        <h4 class="text-center">Enqueue Here</h4>-->
         <div class="form-group" id="queue-form">
-            <label for="name-field">Name or pipeline</label><input id="name-field" class="form-control" placeholder="Name" type="text"
+            <label for="name-field">Pipeline Username</label><input id="name-field" class="form-control" placeholder="Name" type="text"
                                                    name="name">
             <label for="location-field">How are we getting together?</label><select id="location-field" class="form-control" placeholder="Location"
                                                        type="text" name="location">
@@ -51,7 +51,9 @@ session_start();
         </div>
     </div>
     <div class="dequeue-container" id="dequeue-container">
-        <span id="user-number">#7: A123</span>
+        <p>Confirmation number: <span id="user-number">#7: A123</span></p>
+        <p>Do not refresh or navigate away from this page</p>
+        <p>If you no longer need help, please dequeue yourself by pressing the button below</p>
         <div class="form-group">
             <button id="dequeue-button" class="btn btn-outline-danger" onclick="dequeueAjax()">dequeue();
             </button>
