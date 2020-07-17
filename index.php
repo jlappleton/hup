@@ -2,7 +2,7 @@
 session_start();
 ?>
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>Help Queue</title>
@@ -50,16 +50,19 @@ session_start();
             </button>
         </div>
     </div>
-    <div class="dequeue-container" id="dequeue-container">
-        <p>Confirmation number: <span id="user-number">#7: A123</span></p>
-        <p>Do not refresh or navigate away from this page</p>
+    <div class="dequeue-container" id="dequeue-container" style="visibility: hidden">
+        <p>Confirmation number: <span id="user-number"></span></p>
+        <div id="contact-method-link"><p></p></div>
+    <div id="wait_instructions">
+        <p>Do not refresh or navigate away from this page, if you do don't worry as your place in the queue will be saved</p>
         <p>If you no longer need help, please dequeue yourself by pressing the button below</p>
+    </div>
         <div class="form-group">
             <button id="dequeue-button" class="btn btn-outline-danger" onclick="dequeueAjax()">dequeue();
             </button>
         </div>
     </div>
-    <script>hideDequeue();</script>
+    <!--<script>hideDequeue();</script>-->
 </div>
 
 <div class="queue">
