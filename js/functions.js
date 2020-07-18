@@ -111,6 +111,17 @@ function enqueueLineSitter(result) {
     console.log(result);
     let resJson = JSON.parse(result);
     document.getElementById("user-number").textContent = resJson["uNumber"];
+    let contact_link = ($("#location-field").val());
+    if (contact_link === "slack") {
+        contact_link = document.getElementById("slack");
+    }else if (contact_link === "hangouts") {
+        contact_link = document.getElementById("hangouts");
+    }else if (contact_link === "email") {
+        contact_link = document.getElementById("appointments");
+    }else {
+        contact_link = document.getElementById("csdept");
+    }
+    document.getElementById("contact-method-link").append(contact_link);
     document.getElementById("dequeue-button").addEventListener("click", function() {
         console.log(resJson["uID"]);
         dequeueAjax(resJson["uID"]);
@@ -126,7 +137,7 @@ function hideDequeue() {
     document.getElementById("dequeue-container").style.display = "none";
 }
 function showDequeue() {
-    document.getElementById("dequeue-container").style.display = "block"
+    document.getElementById("dequeue-container").style.visibility = "visible"
 }
 
 function dequeueAjax(uID) {
@@ -136,16 +147,18 @@ function dequeueAjax(uID) {
         data: {
             dequeue: uID
         },
-        success: dequeueLineSitter
+        //success: dequeueLineSitter
+
     });
+    dequeueLineSitter();
 }
 
 function dequeueLineSitter(result) {
-    console.log(result);
+    //console.log(result);
     showAlert(false, "Removed from queue");
-    flipSubtitle();
-    hideDequeue();
-    showEnqueue();
+    //flipSubtitle();
+   // hideDequeue();
+   // showEnqueue();
     location.reload();
 }
 function initPage() {
