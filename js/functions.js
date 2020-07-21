@@ -147,10 +147,10 @@ function dequeueAjax(uID) {
         data: {
             dequeue: uID
         },
-        //success: dequeueLineSitter
+        success: dequeueLineSitter
 
     });
-    dequeueLineSitter();
+    //dequeueLineSitter();
 }
 
 function dequeueLineSitter(result) {
