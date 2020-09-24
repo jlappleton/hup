@@ -14,6 +14,16 @@ if (isset($_POST["dequeue"])) {
     $uID = insert_user($_GET['name'], $_GET["location"], $_GET["course"], $user_hash, $help_number);
     $_SESSION['id'] = $uID['id'];
     echo json_encode(array("uID" => $uID['id'], "uNumber" => $help_number));
-} elseif (isset($_GET["myturn"])) {
-    // TODO database call to find user's current position in queue
+} elseif (isset($_POST["statusCheck"])) {
+    global $conn;
+    $avail = array();
+    $sql = "SELECT availability FROM handsUp.wait_queue_admin WHERE name = 'james';";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $avail['james'] = $stmt->fetch(PDO::FETCH_ASSOC)['availability'];
+    $sql = "SELECT availability FROM handsUp.wait_queue_admin WHERE name = 'joseph';";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $avail['joseph'] = $stmt->fetch(PDO::FETCH_ASSOC)['availability'];
+    echo json_encode($avail);
 }

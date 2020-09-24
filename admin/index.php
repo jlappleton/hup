@@ -38,6 +38,20 @@ if (isset($_POST["delete"])) {
 <div id="title-container" class="container text-center">
     <h1>Help Queue Admin</h1>
 </div>
+<div id="status-update-container" >
+    <div class="form-group" id="status-update-form">
+        <label for="status-field">Current Status?</label>
+        <select id="location-field" class="form-control" placeholder="isOnline" type="text" name="location">
+            <option value="online">isOnline</option>
+            <option value="offline">isOffline</option>
+            <option value="break">break;</option>
+
+        </select>
+        <br>
+        <button id="status-update-button" class="btn btn-outline-info" onclick="updateStatus();">update();
+        </button>
+    </div>
+</div>
 <div class="queue-container">
     <?php
     print("<table> <tr> <th>id</th> <th>name</th> <th>location</th> <th>course</th> <th>hash</th> <th>confirmation</th> <th><form method='post'> <input type='submit' name='logout' class='button' value='logout'/> </form></th></tr>");

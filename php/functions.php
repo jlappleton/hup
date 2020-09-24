@@ -46,7 +46,7 @@ function get_queue()
 }
 
 /*
- * inser_user - inserts a user
+ * insert_user - inserts a user
  */
 function insert_user($userName, $userLocation, $userCourse, $userHash, $userNumber)
 {

@@ -75,3 +75,26 @@ th, td {
     border: 1px solid black;
     padding: 0.6rem;
 }
+
+.column {
+    float:left;
+}
+.card {
+    float:left;
+    align-content: center;
+}
+
+.blinker {
+    animation:blink 1s infinite;
+}
+@keyframes blink{
+    0%{ color: black; }
+    49%{ color: black}
+    50%{ color: transparent; }
+    99%{ color: transparent}
+    100%{ color: black; }
+}
+
+.j {
+    border-radius: 100%;
+}

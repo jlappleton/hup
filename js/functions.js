@@ -171,3 +171,62 @@ function initPage() {
         };
     }
 }
+
+function ltaStatusCheck() {
+    $.ajax({
+        url: "php/queue.php",
+        method: "POST",
+        data: {
+            statusCheck: "statusCheck"
+        },
+        success: updateLtaStatus
+
+    });
+}
+
+function updateLtaStatus(result) {
+    let resJson = JSON.parse(result);
+    let jamesCard = document.getElementById("jamesCard");
+    document.getElementById("james").textContent = resJson["james"];
+    if (resJson['james'] === "is Available") {
+        jamesCard.className = "card text-white bg-success mb-3"
+    } else if (resJson['james'] === "is Not Online") {
+        jamesCard.className = "card text-white bg-danger mb-3"
+    } else {
+        jamesCard.className = "card text-white bg-warning mb-3"
+    }
+    let josephCard = document.getElementById("josephCard");
+    document.getElementById("joseph").textContent = resJson["joseph"];
+    if (resJson['joseph'] === "is Available") {
+        josephCard.className = "card text-white bg-success mb-3"
+    } else if (resJson['joseph'] === "is Not Online") {
+        josephCard.className = "card text-white bg-danger mb-3"
+    } else {
+        josephCard.className = "card text-white bg-warning mb-3"
+    }
+}
+
+function updateStatus() {
+    $status = ($("#location-field").val());
+    $.ajax({
+        url: "admin.php",
+        method: "POST",
+        data: {
+            status: $status
+        },
+        success: goodUpdate,
+        error: badUpdate
+
+    });
+}
+
+function goodUpdate(result) {
+    let resJson = JSON.parse(result);
+    let msg = "Status updated to " + resJson["message"];
+    showAlert(true, msg);
+}
+
+function badUpdate(result) {
+    let msg = "Something went wrong: " + result;
+    showAlert(false, msg)
+}
